@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Header from './header'
+import Header from '../components/header'
 import "../styles/main.scss"
 
 const Layout = ({ children }) => (
@@ -38,7 +38,17 @@ const Layout = ({ children }) => (
   )
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.object.isRequired,
 }
 
 export default Layout
+
+export const query = graphql`
+query LayoutQuery {
+  site {
+    siteMetadata {
+      title
+    }
+  }
+}
+`

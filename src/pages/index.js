@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Layout from '../components/layout'
+import Layout from "../layouts"
 import Headline from '../components/headline'
-
 import "../styles/main.scss"
 import { redirectTo } from '@reach/router'
 import { graphql } from 'gatsby'

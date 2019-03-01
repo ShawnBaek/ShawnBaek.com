@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 // import PostIcons from "../components/postIcons"
 import Img from "gatsby-image"
-import Layout from "../components/layout"
+import Layout from "../layouts"
 
 import { rhythm } from "../utils/typography"
 
