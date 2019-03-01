@@ -1,0 +1,267 @@
+.navigation {
+    ul {
+        margin-left: 0rem;
+    }
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__button {
+        background-color: var(--color-grey-light-2);
+        height: 3rem;
+        width: 3rem;
+        position: fixed;
+        top: 0.5rem;
+        left: 0.5rem;
+        border-radius: 50%;
+        z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba(0,0,0,.1);
+        text-align: center;
+        cursor: pointer;
+        visibility: hidden;
+
+        @include respond(phone) {
+            visibility: visible;
+        }
+    
+        @include respond(tab-port) {
+            visibility: visible;
+        }
+    }
+
+    &__background {
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 0.75rem;
+        left: 0.75rem;
+        background-image: radial-gradient(var(--color-secondary-light), var(--color-secondary));
+        z-index: 1000;
+        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+
+        visibility: hidden;
+
+        @include respond(phone) {
+            visibility: visible;
+        }
+    
+        @include respond(tab-port) {
+            visibility: visible;
+        }
+    }
+
+    &__nav {
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0; //button right -> right: 0
+        z-index: 1500;
+
+        opacity: 0;
+        width: 0;
+        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    &__list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        list-style: none;
+        text-align: center;
+        width: 100%;        
+    }
+
+    &__item {
+        margin: 3rem;
+    }
+
+    &__link {
+        text-decoration: none;
+        text-transform: uppercase;
+        &:link,
+        &:visited {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 300;
+            padding: 1rem 1.5rem;
+            color: white;
+            transition: all .4s;
+            span {
+                margin-right: 1rem;
+                display: inline-block;
+            }
+        }
+        &:hover,
+        &:active {
+            background: 100%;
+            text-decoration: none;
+            color: var(--color-secondary);
+            transform: translateX(0.5rem);
+            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+            background-size: 250%;
+        }
+    }
+
+    //Functionality
+    &__checkbox:checked ~ &__background {
+        transform: scale(80);
+    }
+
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        width: 100%;
+    }
+
+    //Hamburger Button
+    &__icon {
+        position: relative;
+        margin-top: 1.5rem;
+
+        &,
+        &::before,
+        &::after {
+            width: 1.4rem;
+            height: 2px;
+            background-color: var(--color-grey-dark-1);
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before { top: -.4rem; }
+        &::after { top: .4rem; }
+    }
+
+    &__button:hover &__icon::before { 
+        top: -.5rem; 
+    }
+    
+    &__button:hover &__icon::after { 
+        top: .5rem; 
+    }
+
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+}
+
+.container {
+    background-color: var(--color-grey-light-2);
+    box-shadow: 0 0rem 0.5rem rgba(0,0,0,.3);
+    // border-bottom: 1px solid var(--color-primary-light);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.header {
+    font-size: 1rem;
+    height: 4rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--color-grey-light-2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    @include respond(phone) {
+        justify-content: center;
+    }
+
+    @include respond(tab-port) {
+        justify-content: center;
+    }
+
+    &__logo {
+        display: flex;
+        margin-left: 2rem;
+        height: 1.5rem;
+
+        @include respond(phone) {
+            margin-left: 0rem;
+        }
+    
+        @include respond(tab-port) {
+            margin-left: 0rem;
+        }
+    }
+
+    &__nav {
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+    
+        & > * {
+            padding: 0 2rem;
+            cursor: pointer;
+        }
+    
+        & > *:hover {
+            background-color: var(--color-grey-light-2);
+        }
+    
+        &__menu-box {
+            display: flex;
+            align-items: center;
+            align-self: stretch;
+        }
+
+        @include respond(phone) {
+            display: none;
+        }
+
+        @include respond(tab-land) {
+            display: flex;
+        }
+
+        @include respond(tab-port) {
+            display: none;
+        }
+
+        @include respond(big-desktop) {
+            display: flex;
+        }
+    }
+
+    &__item {
+        padding: 0 2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        align-self: stretch;
+
+        &:hover {
+            background-color: var(--color-grey-light-2);
+        }
+    }
+
+    &__link {
+        color: var(--color-grey-dark);
+        &:link,
+        &:visited {
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    }
+}
