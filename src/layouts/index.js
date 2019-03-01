@@ -35,20 +35,10 @@ const Layout = ({ children }) => (
         </>
       )}
     />
-  )
+)
 
 Layout.propTypes = {
   children: PropTypes.object.isRequired,
 }
 
 export default Layout
-
-export const query = graphql`
-query LayoutQuery {
-  site {
-    siteMetadata {
-      title
-    }
-  }
-}
-`
