@@ -18,24 +18,36 @@ const IndexPage = ({ data }) => {
            paddingTop: '1.45rem',
          }}
       >
-      <h3>Hellow!!</h3>
+      <h3>Hellow!! {data.site.siteMetadata.title}</h3>
       <div>
-          {/* <h1>{data.title}</h1>
+          <h1>{data.title}</h1>
           <h3 style={{color:'rgb(76, 76, 76)'}}>{data.title}</h3>
-          <div style={{color:'rgb(76, 76, 76)'}} dangerouslySetInnerHTML={{ __html: data.content }}></div> */}
+          <div style={{color:'rgb(76, 76, 76)'}} dangerouslySetInnerHTML={{ __html: data.content }}></div>
       </div>
       </div>
     </Layout>
   )
 }
-export default IndexPage
 
-export const blogQuery = graphql`
-  query {
-    wordpressPage(slug: { eq: "about" }) {
-      title
-      content
-      date(formatString: "MMMM DD, YYYY")
+// export const blogQuery = graphql`
+//   query HomePageQuery {
+//     wordpressPage(slug: { eq: "about" }) {
+//       title
+//       content
+//       date(formatString: "MMMM DD, YYYY")
+//     }
+//   }
+// `
+
+export const query = graphql`
+  query HomePageQuery {
+    site {
+      siteMetadata {
+        title
+      }
     }
   }
 `
+
+export default IndexPage
+
