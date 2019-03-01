@@ -21,9 +21,9 @@ const IndexPage = ({ data }) => {
       >
       <h3>Hellow!!</h3>
       <div>
-          <h1>{data.title}</h1>
+          {/* <h1>{data.title}</h1>
           <h3 style={{color:'rgb(76, 76, 76)'}}>{data.title}</h3>
-          <div style={{color:'rgb(76, 76, 76)'}} dangerouslySetInnerHTML={{ __html: data.content }}></div>
+          <div style={{color:'rgb(76, 76, 76)'}} dangerouslySetInnerHTML={{ __html: data.content }}></div> */}
       </div>
       </div>
     </Layout>
