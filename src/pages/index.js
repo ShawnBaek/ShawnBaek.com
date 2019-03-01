@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import Headline from '../components/headline'
+
 import "../styles/main.scss"
 import { redirectTo } from '@reach/router'
 import { graphql } from 'gatsby'
@@ -19,11 +20,11 @@ const IndexPage = ({ data }) => {
          }}
       >
       <h3>Hellow!!</h3>
-      {/* <div>
+      <div>
           <h1>{data.title}</h1>
           <h3 style={{color:'rgb(76, 76, 76)'}}>{data.title}</h3>
           <div style={{color:'rgb(76, 76, 76)'}} dangerouslySetInnerHTML={{ __html: data.content }}></div>
-      </div> */}
+      </div>
       </div>
     </Layout>
   )

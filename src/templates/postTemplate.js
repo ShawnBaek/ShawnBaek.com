@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import PostIcons from "../components/postIcons"
+// import PostIcons from "../components/postIcons"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 
@@ -14,7 +14,7 @@ class PostTemplate extends Component {
     return (
       <Layout>
         <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-        <PostIcons node={post} css={{ marginBottom: rhythm(1 / 2) }} />
+        {/* <PostIcons node={post} css={{ marginBottom: rhythm(1 / 2) }} /> */}
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
       </Layout>
     )
