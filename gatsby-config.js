@@ -82,6 +82,15 @@ module.exports = {
           // See: https://github.com/isaacs/minimatch
           // Example:  `["/*/*/comments", "/yoast/**"]` will exclude routes ending in `comments` and
           // all routes that begin with `yoast` from fetch.
+          includedRoutes: [
+            "**/categories",
+            "**/posts",
+            "**/pages",
+            "**/media",
+            "**/tags",
+            "**/taxonomies",
+            "**/users",
+          ],
           excludedRoutes: ["/*/*/comments", "/yoast/**"],
           // use a custom normalizer which is applied after the built-in ones.
           normalizer: function({ entities }) {

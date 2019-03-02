@@ -14,7 +14,7 @@ const Header = ({ siteTitle }) => (
         <nav class="navigation__nav">
             <ul class="navigation__list">
             <li class="navigation__item">
-                <Link className="navigation__link" to="blog">Blog</Link>
+                <Link className="navigation__link" to="/blog/">Blog</Link>
             </li>
             <li class="navigation__item">
                 <Link className="navigation__link" to="portfolio">Portfolio</Link>
@@ -29,7 +29,7 @@ const Header = ({ siteTitle }) => (
         <Link to="/"><Logo alt="shawnbaek logo" className="header__logo"/></Link>
         <nav className="header__nav">
         <div className="header__item">
-            <Link to="blog" className="header__link">Blog</Link>
+            <Link to="/blog/" className="header__link">Blog</Link>
         </div>
         <div className="header__item">
             <Link to="portfolio" className="header__link">Portfolio</Link>
