@@ -34,7 +34,7 @@ module.exports = {
   
           baseUrl: `uxengineer.wordpress.com`,
           // The protocol. This can be http or https.
-          protocol: `http`,
+          protocol: `https`,
           // Indicates whether the site is hosted on wordpress.com.
           // If false, then the asumption is made that the site is self hosted.
           // If true, then the plugin will source its content on wordpress.com using the JSON REST API V2.
@@ -70,7 +70,7 @@ module.exports = {
           // It can help you debug specific API Endpoints problems.
           verboseOutput: false,
           // Set how many pages are retrieved per API request.
-          perPage: 50,
+          perPage: 100,
           // Search and Replace Urls across WordPress content.
           searchAndReplaceContentUrls: {
             sourceUrl: "https://uxengineer.wordpress.com",
@@ -136,7 +136,7 @@ module.exports = {
                 // right after importing the prism color scheme:
                 //  `require("prismjs/plugins/line-numbers/prism-line-numbers.css");`
                 // Defaults to false.
-                showLineNumbers: false,
+                showLineNumbers: true,
                 // If setting this to true, the parser won't handle and highlight inline
                 // code used in markdown i.e. single backtick code like `this`.
                 noInlineHighlight: false,
