@@ -9,6 +9,21 @@ import { graphql } from 'gatsby'
 class IndexPage extends Component {
   render() {
     const data = this.props.data.wordpressPage
+    var codeTest = `
+    var _self = (typeof window !== 'undefined')
+	? window   // if in browser
+	: (
+		(typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope)
+		? self // if in worker
+		: {}   // if in node js
+	);
+    `
+    var swift = `
+      let test = "hellow"
+      func test() -> Bool {
+        return false
+      }
+    `
     return (
       <Layout>
       <Headline title={"I'm Shawn Baek"} subTitle={"iOS Developer"}/>
@@ -24,10 +39,16 @@ class IndexPage extends Component {
           <h1 style={{color:'rgb(76, 76, 76)'}}>{data.title}</h1>
           <div style={{color:'rgb(76, 76, 76)'}} dangerouslySetInnerHTML={{ __html: data.content }}></div>
       </div>
-      <pre className="js">
-        <code>
-         const dats = "ddd";
-        </code>
+      <pre className="language-javascript">
+          <code >
+              {codeTest}
+          </code>
+      </pre>
+
+      <pre className="language-swift">
+          <code >
+              {swift}
+          </code>
       </pre>
       </div>
     </Layout>
