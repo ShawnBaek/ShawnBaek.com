@@ -8,18 +8,29 @@
     npm install
     ```
 1. **Use "gatsby-source-wordpress": "^3.0.2"**
-    Don't use the latest version. It has some bugs that can't fetch featured_media field.
+    
+Don't use the latest version. It has some bugs that can't fetch featured_media field.
     ```sh
     npm install --save gatsby-source-wordpress@3.0.2
     ```
+
+1.  **Create .env.{development | staging} file and Set Wordpress Variables**
+
+e.g. `.env.development`
+```javascript
+WORDPRESS_CLIENT_ID=
+WORDPRESS_API_KEY=
+WORDPRESS_USER=
+WORDPRESS_PASSWORD=
+```
 
 1.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
     ```sh
-    cd my-hello-world-starter/
-    gatsby develop
+    cd shawnbaek.com/
+    ACTIVE_ENV=staging npm run develop
     ```
 
 1.  **Open the source code and start editing!**
