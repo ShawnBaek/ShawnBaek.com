@@ -9,20 +9,21 @@
     ```
 1. **Use "gatsby-source-wordpress": "^3.0.2"**
     
-Don't use the latest version. It has some bugs that can't fetch featured_media field.
+    Don't use the latest version. It has some bugs that can't fetch featured_media field.
+
     ```sh
     npm install --save gatsby-source-wordpress@3.0.2
     ```
 
 1.  **Create .env.{development | staging} file and Set Wordpress Variables**
 
-e.g. `.env.development`
-```javascript
-WORDPRESS_CLIENT_ID=
-WORDPRESS_API_KEY=
-WORDPRESS_USER=
-WORDPRESS_PASSWORD=
-```
+    e.g. `.env.development`
+    ```javascript
+    WORDPRESS_CLIENT_ID=
+    WORDPRESS_API_KEY=
+    WORDPRESS_USER=
+    WORDPRESS_PASSWORD=
+    ```
 
 1.  **Start developing.**
 
@@ -39,7 +40,7 @@ WORDPRESS_PASSWORD=
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    Open the `shawnbaek.com` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
 ## 🧐 What's inside?
 
