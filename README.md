@@ -5,6 +5,7 @@
 1.  **Clone Git Repository.**
     ```sh
     git clone https://github.com/ShawnBaek/shawnbaek.com
+    cd shawnbaek.com/
     npm install
     ```
 1. **Use "gatsby-source-wordpress": "^3.0.2"**
@@ -30,7 +31,6 @@
     Navigate into your new site’s directory and start it up.
 
     ```sh
-    cd shawnbaek.com/
     ACTIVE_ENV=staging npm run develop
     ```
 
