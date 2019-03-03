@@ -4,7 +4,13 @@
 
 1.  **Clone Git Repository.**
     ```sh
-    git clone https://github.com/gatsbyjs/gatsby-starter-hello-world
+    git clone https://github.com/ShawnBaek/shawnbaek.com
+    npm install
+    ```
+1. **Use "gatsby-source-wordpress": "^3.0.2"**
+    Don't use the latest version. It has some bugs that can't fetch featured_media field.
+    ```sh
+    npm install --save gatsby-source-wordpress@3.0.2
     ```
 
 1.  **Start developing.**

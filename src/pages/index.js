@@ -24,6 +24,11 @@ class IndexPage extends Component {
           <h1 style={{color:'rgb(76, 76, 76)'}}>{data.title}</h1>
           <div style={{color:'rgb(76, 76, 76)'}} dangerouslySetInnerHTML={{ __html: data.content }}></div>
       </div>
+      <pre className="js">
+        <code>
+         const dats = "ddd";
+        </code>
+      </pre>
       </div>
     </Layout>
     )

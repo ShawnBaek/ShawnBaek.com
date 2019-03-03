@@ -23,6 +23,13 @@ exports.createPages = async ({ graphql, actions }) => {
             slug
             status
             template
+            featured_media {
+              localFile{
+                  childImageSharp {
+                      id
+                  } 
+              }
+          }
           }
         }
       }
@@ -34,6 +41,13 @@ exports.createPages = async ({ graphql, actions }) => {
             status
             template
             format
+            featured_media {
+              localFile{
+                  childImageSharp {
+                      id
+                  } 
+              }
+          }
           }
         }
       }

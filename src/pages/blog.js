@@ -41,6 +41,73 @@ export default ({ data }) => {
   )
 }
 // export default BlogPage
+export const blogQuery = graphql`
+  query {
+    allWordpressPost(sort: { fields: [date] }) {
+      edges {
+        node {
+          id
+          title
+          excerpt
+          slug
+          date(formatString: "MMMM DD, YYYY")
+          categories {
+            id
+            name
+          }
+          tags {
+            id
+            name
+          }          
+          author {
+            id
+            url
+            name
+            description
+            avatar_urls {
+              wordpress_24
+              wordpress_48
+              wordpress_96
+            }
+          }
+          featured_media {
+            localFile {
+              childImageSharp {
+                # edit the maxWidth value to generate resized images
+                resolutions(width: 500, height: 500) {
+                  src
+                  width
+                  height
+                  srcSet
+                  aspectRatio
+                }
+              }
+            }
+            id
+            media_details {
+              width
+              height
+              file
+              filesize
+            }
+            source_url
+          }
+          jetpack_related_posts {
+            wordpress_id
+            url
+            title
+            date
+            format
+            excerpt
+            rel
+            context
+          }
+        }
+      }
+    }
+  }
+`
+
 
 // export const blogQuery = graphql`
 //   query {
