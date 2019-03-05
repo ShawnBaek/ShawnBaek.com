@@ -5,18 +5,23 @@ import Headline from '../components/headline'
 import "../styles/main.scss"
 import { redirectTo } from '@reach/router'
 import { graphql } from 'gatsby'
+import PrismJS from 'prismjs'
+import 'prismjs/components/prism-swift'
 
 class IndexPage extends Component {
+  componentDidMount() {
+    PrismJS.highlightAll()
+  }
   render() {
     const data = this.props.data.wordpressPage
     var codeTest = `
-    var _self = (typeof window !== 'undefined')
-	? window   // if in browser
-	: (
-		(typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope)
-		? self // if in worker
-		: {}   // if in node js
-	);
+      var _self = (typeof window !== 'undefined')
+    ? window   // if in browser
+    : (
+      (typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope)
+      ? self // if in worker
+      : {}   // if in node js
+    );
     `
     var swift = `
       let test = "hellow"
@@ -39,12 +44,12 @@ class IndexPage extends Component {
           <h1 style={{color:'rgb(76, 76, 76)'}}>{data.title}</h1>
           <div style={{color:'rgb(76, 76, 76)'}} dangerouslySetInnerHTML={{ __html: data.content }}></div>
       </div>
+         
       <pre className="language-javascript">
           <code >
               {codeTest}
           </code>
       </pre>
-
       <pre className="language-swift">
           <code >
               {swift}
